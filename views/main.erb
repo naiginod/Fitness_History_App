@@ -1,0 +1,56 @@
+<% if !session[:message].nil? %>
+<div align="center" style="font-size: 20px; color: red"><%= session[:message] %>
+</div>
+  <% session[:message] = nil %>
+<% end %>
+<br>
+<div style="float: left; width: 30%">
+  <div>
+  <% if session[:accepted] == nil %>
+    <form method="post" action="/signin">
+    <label value="Sign In">Username:</label>
+    <input name="user">
+    <br>
+    <label value="Password">Password:</label>
+    <input name="password">
+    <button type="submit">Sign In</button>
+    </form>
+  <% else %>
+    You are logged in. <a href="/signout">Sign Out</a> 
+    <br>
+    <a href="/exercise-log">Add to exercise log.</a>
+  <% end %>
+  </div>
+</div>
+
+<div style="float:right; width: 70%">
+<img src="data/running.jpg" alt="running">
+<br>
+
+  <div id="day">
+    Upper body workouts:
+    <ul>
+      <% @upper.each do |exercise| %>
+        <li><a href=<%= exercise[1] %>><%= exercise[0] %></a></li>  
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="day">
+    Lower body workouts:
+    <ul>
+      <% @lower.each do |exercise| %>
+        <li><a href=<%= exercise[1] %>><%= exercise[0] %></a></li> 
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="day">
+    Cardio workouts:
+    <ul>
+      <% @cardio.each do |exercise| %>
+        <li><a href=<%= exercise[1] %>><%= exercise[0] %></a></li>  
+      <% end %>
+    </ul>
+  </div>
+</div>

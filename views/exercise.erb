@@ -1,0 +1,36 @@
+<% if !session[:message].nil? %>
+<div align="center" style="font-size: 20px; color: red"><%= session[:message] %>
+</div>
+  <% session[:message] = nil %>
+<% end %>
+<div style="float: left; width: 30%">
+  Hi, <%= session[:user] %>
+  <p>
+  <form method="post" action="/exercise-log">
+  Enter Date (mm/dd/yyyy):
+  <input name="date" placeholder="Enter Date">
+  <br>
+  Enter Exercise:
+  <input name="exercise" placeholder="Exercise">
+  <br>
+  Enter Sets or Duration(min):
+  <input name="amount" placeholder="Sets or Duration">
+  <br>
+  <button type="input">Submit</button>
+  </form>
+  <a href="/">Home</a>
+  <p>
+  <a href="/signout">Sign Out</a>
+</div>
+<div style="float: right; width: 70%">
+  <% @log.keys.each do |date| %>
+    Date: <%= date %>
+    <ul>
+      <% @log[date].each do |exercise| %>
+      <li>Exercise: <%= exercise[0] %> </li>
+      <li>Set/Duration: <%= exercise[1] %></li>
+      <br>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

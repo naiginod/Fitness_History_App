@@ -1,0 +1,14 @@
+{
+  upper_body: [[Bench Press, "https://en.wikipedia.org/wiki/Bench_press"], 
+              [Pull Ups, "https://en.wikipedia.org/wiki/Pull-up_(exercise)"],
+              [Biceps Curl, "https://en.wikipedia.org/wiki/Biceps_curl"],
+              [Bent Over Row, "https://en.wikipedia.org/wiki/Bent-over_row"]],
+  lower_body: [[Squats, "https://en.wikipedia.org/wiki/Squat_(exercise)"],
+              [Deadlifts, "https://en.wikipedia.org/wiki/Deadlift"],
+              [Leg Curls, "https://en.wikipedia.org/wiki/Leg_curl"],
+              [Leg Press, "https://en.wikipedia.org/wiki/Leg_press"]],
+  cardio: [[Running, "https://en.wikipedia.org/wiki/Running"],
+          [Cycling, "https://en.wikipedia.org/wiki/Cycling"],
+          [Swimming, "https://en.wikipedia.org/wiki/Swimming_(sport)"],
+          [Aerobics, "https://en.wikipedia.org/wiki/Aerobics"]]
+}
